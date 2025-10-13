@@ -105,6 +105,10 @@ export type Config = {
    */
   modelApiKey?: string;
   /**
+   * OpenAI-compatible base URL for the model provider
+   */
+  modelBaseUrl?: string;
+  /**
    * Enable experimental features
    *
    * @default false

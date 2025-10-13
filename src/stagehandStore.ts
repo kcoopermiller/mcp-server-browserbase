@@ -29,7 +29,9 @@ export const createStagehandInstance = async (
     modelName:
       params.modelName || config.modelName || "google/gemini-2.0-flash",
     modelClientOptions: {
-      apiKey: config.modelApiKey || process.env.GEMINI_API_KEY,
+      apiKey:
+        config.modelApiKey || process.env.PRIME_API_KEY,
+      baseURL: config.modelBaseUrl || process.env.PRIME_BASE_URL,
     },
     ...(params.browserbaseSessionID && {
       browserbaseSessionID: params.browserbaseSessionID,

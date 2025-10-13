@@ -65,6 +65,10 @@ program
     "--modelApiKey <key>",
     "API key for the custom model provider (required when using custom models)",
   )
+  .option(
+    "--modelBaseUrl <url>",
+    "OpenAI-compatible base URL for the model provider",
+  )
   .option("--keepAlive", "Enable Browserbase Keep Alive Session")
   .option("--experimental", "Enable experimental features")
   .action(async (options) => {

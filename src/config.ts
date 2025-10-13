@@ -17,6 +17,7 @@ export type CLIOptions = {
   browserHeight?: number;
   modelName?: typeof AvailableModel;
   modelApiKey?: string;
+  modelBaseUrl?: string;
   keepAlive?: boolean;
   experimental?: boolean;
 };
@@ -47,6 +48,12 @@ export async function resolveConfig(cliOptions: CLIOptions): Promise<Config> {
   // --- Add Browserbase Env Vars ---
   if (!mergedConfig.modelApiKey) {
     mergedConfig.modelApiKey = process.env.GEMINI_API_KEY;
+  }
+  if (!mergedConfig.modelApiKey) {
+    mergedConfig.modelApiKey = process.env.PRIME_API_KEY;
+  }
+  if (!mergedConfig.modelBaseUrl) {
+    mergedConfig.modelBaseUrl = process.env.PRIME_BASE_URL;
   }
 
   // --------------------------------
@@ -99,6 +106,7 @@ export async function configFromCLIOptions(
     cookies: cliOptions.cookies,
     modelName: cliOptions.modelName,
     modelApiKey: cliOptions.modelApiKey,
+    modelBaseUrl: cliOptions.modelBaseUrl,
     keepAlive: cliOptions.keepAlive,
     experimental: cliOptions.experimental,
   };
