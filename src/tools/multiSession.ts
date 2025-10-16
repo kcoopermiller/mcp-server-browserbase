@@ -14,6 +14,17 @@ import actTool from "./act.js";
 import extractTool from "./extract.js";
 import observeTool from "./observe.js";
 import getUrlTool, { getAllUrlsTool } from "./url.js";
+import {
+  cuScreenshotTool,
+  cuClickTool,
+  cuDoubleClickTool,
+  cuScrollTool,
+  cuTypeTool,
+  cuWaitTool,
+  cuMoveTool,
+  cuKeypressTool,
+  cuDragTool,
+} from "./computerUse.js";
 
 /**
  * Creates a session-aware version of an existing tool
@@ -267,3 +278,49 @@ export const getUrlWithSessionTool = createMultiSessionAwareTool(getUrlTool, {
 
 // This wraps getAllUrlsTool which doesn't need sessionId
 export const getAllUrlsWithSessionTool = getAllUrlsTool;
+
+// Computer-use multi-session tools
+export const cuScreenshotWithSessionTool = createMultiSessionAwareTool(
+  cuScreenshotTool,
+  { namePrefix: "multi_", nameSuffix: "_session" },
+);
+
+export const cuClickWithSessionTool = createMultiSessionAwareTool(cuClickTool, {
+  namePrefix: "multi_",
+  nameSuffix: "_session",
+});
+
+export const cuDoubleClickWithSessionTool = createMultiSessionAwareTool(
+  cuDoubleClickTool,
+  { namePrefix: "multi_", nameSuffix: "_session" },
+);
+
+export const cuScrollWithSessionTool = createMultiSessionAwareTool(
+  cuScrollTool,
+  { namePrefix: "multi_", nameSuffix: "_session" },
+);
+
+export const cuTypeWithSessionTool = createMultiSessionAwareTool(cuTypeTool, {
+  namePrefix: "multi_",
+  nameSuffix: "_session",
+});
+
+export const cuWaitWithSessionTool = createMultiSessionAwareTool(cuWaitTool, {
+  namePrefix: "multi_",
+  nameSuffix: "_session",
+});
+
+export const cuMoveWithSessionTool = createMultiSessionAwareTool(cuMoveTool, {
+  namePrefix: "multi_",
+  nameSuffix: "_session",
+});
+
+export const cuKeypressWithSessionTool = createMultiSessionAwareTool(
+  cuKeypressTool,
+  { namePrefix: "multi_", nameSuffix: "_session" },
+);
+
+export const cuDragWithSessionTool = createMultiSessionAwareTool(cuDragTool, {
+  namePrefix: "multi_",
+  nameSuffix: "_session",
+});

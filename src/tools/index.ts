@@ -6,6 +6,17 @@ import screenshotTool from "./screenshot.js";
 import sessionTools from "./session.js";
 import getUrlTool from "./url.js";
 import {
+  cuScreenshotTool,
+  cuClickTool,
+  cuDoubleClickTool,
+  cuScrollTool,
+  cuTypeTool,
+  cuWaitTool,
+  cuMoveTool,
+  cuKeypressTool,
+  cuDragTool,
+} from "./computerUse.js";
+import {
   createSessionTool,
   listSessionsTool,
   closeSessionTool,
@@ -15,6 +26,15 @@ import {
   observeWithSessionTool,
   getUrlWithSessionTool,
   getAllUrlsWithSessionTool,
+  cuScreenshotWithSessionTool,
+  cuClickWithSessionTool,
+  cuDoubleClickWithSessionTool,
+  cuScrollWithSessionTool,
+  cuTypeWithSessionTool,
+  cuWaitWithSessionTool,
+  cuMoveWithSessionTool,
+  cuKeypressWithSessionTool,
+  cuDragWithSessionTool,
 } from "./multiSession.js";
 
 // Export individual tools
@@ -25,6 +45,17 @@ export { default as observeTool } from "./observe.js";
 export { default as screenshotTool } from "./screenshot.js";
 export { default as sessionTools } from "./session.js";
 export { default as getUrlTool } from "./url.js";
+export {
+  cuScreenshotTool,
+  cuClickTool,
+  cuDoubleClickTool,
+  cuScrollTool,
+  cuTypeTool,
+  cuWaitTool,
+  cuMoveTool,
+  cuKeypressTool,
+  cuDragTool,
+} from "./computerUse.js";
 
 // Multi-session tools array
 export const multiSessionTools = [
@@ -37,6 +68,16 @@ export const multiSessionTools = [
   observeWithSessionTool,
   getUrlWithSessionTool,
   getAllUrlsWithSessionTool,
+  // Computer-use multi-session tools
+  cuScreenshotWithSessionTool,
+  cuClickWithSessionTool,
+  cuDoubleClickWithSessionTool,
+  cuScrollWithSessionTool,
+  cuTypeWithSessionTool,
+  cuWaitWithSessionTool,
+  cuMoveWithSessionTool,
+  cuKeypressWithSessionTool,
+  cuDragWithSessionTool,
 ];
 
 // Export all tools as array
@@ -49,6 +90,16 @@ export const TOOLS = [
   observeTool,
   screenshotTool,
   getUrlTool,
+  // Computer-use tools
+  cuScreenshotTool,
+  cuClickTool,
+  cuDoubleClickTool,
+  cuScrollTool,
+  cuTypeTool,
+  cuWaitTool,
+  cuMoveTool,
+  cuKeypressTool,
+  cuDragTool,
 ];
 
 export const sessionManagementTools = sessionTools;
